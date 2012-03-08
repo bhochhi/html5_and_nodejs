@@ -2,56 +2,25 @@
 <html>
 	<head>
 		<title>Line and Dots: Multiplayer</title>
+		<link rel="stylesheet" href="main.css" />
 		<script type="text/javascript" src="res/jquery.js"></script>
 		<script type="text/javascript" src="res/underscore.js"></script>
 		<script type="text/javascript" src="res/backbone.js"></script>
 		<script type="text/javascript" src="linesndots.js"></script>
-		<style>
-			#mainContent {
-				
-			}
-			body {
-				background: white;
-			}
-			#pos {
-				color: #00FF00;
-			}
-			.registerBoard, .infoBoard, #result {
-				border: #CCC solid 1px;
-				padding: 10px 15px;
-			}
-			#result {
-				border: #FF0000 solid 1px;
-			}
-			.user-list {
-				padding-bottom: 10px;
-			}
-			.label-class, #turn {
-				font-weight: bold;
-				color: #009ACD;
-			}
-			input {
-				margin: 5px 0px;
-			}
-			.rules {
-				border: 1px solid #CCCCCC;
-				margin-bottom: 40px;
-			}
-			.leftSide {
-				text-align: left;
-				width: 300px;
-				float: left;
-				margin: 20px 0 0 10px;
-			}
-			ol lh {
-				font-weight: bold;
-				color: #009ACD;
-			}
-		</style>
 	</head>
 	<body>
 		<div id="mainContent">
-			<div class="leftSide">
+			<header id="top_header">
+				Lines and Dots: Multiplayer Game in html5 and node.js with websocket </h3>
+			</header>
+			<section id="main_stage">
+				<canvas id="game-stage" width="550px" height="550px" >
+					<p>
+						Your browser doesn't support canvas.
+					</p>
+				</canvas>
+			</section>
+			<aside id="side_bar">
 				<div class="rules">
 					<ol>
 						<lh>
@@ -73,13 +42,7 @@
 					<br />
 					<div class="user-list">
 						<input type="radio" name="group1" value="Rupesh" checked>
-						Rupesh
-						<br>
-						<input type="radio" name="group1" value="Ryan">
-						Sangita
-						<br>
-						<input type="radio" name="group1" value="Saurav">
-						Saurav
+						mock
 						<br>
 					</div>
 					<label class="label-class" for="userName">Register your name to play: </label>
@@ -89,23 +52,20 @@
 					<input type="button" onclick="registerUser()"  value="Register" />
 				</div>
 				<div class="infoBoard">
-					Your color of your pen is: <canvas id="pen" height="10px" width="50px"></canvas>
+					The color of your pen is: <canvas id="pen" height="10px" width="50px"></canvas>
+					<div  id="turn_label">Turn</label>
 					<div id="turn">
-						Turn:
+						
 					</div>
 					<div id="score"></div>
 				</div>
-			</div>
-			<canvas id="game-stage" width="550px" height="550px" >
-				<p>
-					Your browser doesn't support canvas.
-				</p>
-			</canvas>
-			<!--<label class="label-class" for="colorPicker">Select your color:</label>
-			<input name="colorpicker" type="color"/><br/>-->
-			<div id="result"></div>
-			<div id="pos"></div>
-			<div id = "errMessage"></div>
+				<div id="result"></div>
+				<div id="pos"></div>
+				<div id = "errMessage"></div>
+			</aside>
+			<footer id="main_footer">
+				(c)rbhochhibhoya@telogical.com 2011
+			</footer>
 		</div>
 	</body>
 </html>

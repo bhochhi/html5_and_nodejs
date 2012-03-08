@@ -75,7 +75,7 @@ function initializeSeverCommunication() {
 	connection.onerror = function(error) {
 		alert('Sorry, problem encountered while communicating with server');
 		// errContainer.html($('<p>', {
-			// text : 'Sorry, problem encountered while communicating with server'
+		// text : 'Sorry, problem encountered while communicating with server'
 		// }));
 	};
 	// most important part - incoming messages
@@ -304,13 +304,10 @@ function drawStageOnCanvas() {
 function createHorizontalLines() {
 	//creating lines horizontal
 	for(var i = 0; i < (hr * vt + hr); i++) {
-		var imag = new Image();
-		imag.src = "img/grayhline.png";
 		var newLine = new Line({
 			name : "h" + i,
 			orient : "H",
-			state : "NEW",
-			image : imag
+			state : "NEW"
 		});
 		horizontalLines.push(newLine);
 	}
@@ -319,13 +316,11 @@ function createHorizontalLines() {
 function createVerticalLines() {
 	//creating lines vertical
 	for(var i = 0; i < (hr * vt + vt); i++) {
-		var imag = new Image();
-		imag.src = "img/grayvline.png";
+
 		var newLine = new Line({
 			name : "v" + i,
 			orient : "V",
-			state : "NEW",
-			image : imag
+			state : "NEW"
 		});
 		verticalLines.push(newLine);
 	}
@@ -351,44 +346,66 @@ Box = Backbone.Model.extend({
 		var dy = startY + this.get("row") * 100;
 
 		if(this.get("topLine").get("state") != "DRAWN") {
-			ctx.beginPath();
-			ctx.drawImage(this.get("topLine").get("image"), dx + 5, dy);
-			ctx.closePath();
+			var imagt = new Image();
+			imagt.onload = function() {
+				ctx.beginPath();
+				ctx.drawImage(imagt, dx + 5, dy);
+				ctx.closePath();
+			}
+			imagt.src = "img/grayhline.png";
 			this.get("topLine").set({
 				xPos : dx + 5,
 				yPos : dy,
-				state : "DRAWN"
+				state : "DRAWN",
+				image : imagt
 			});
 		}
 		if(this.get("bottomLine").get("state") != "DRAWN") {
-			ctx.beginPath();
-			ctx.drawImage(this.get("bottomLine").get("image"), dx + 5, dy + 100);
-			ctx.closePath();
+			var imagb = new Image();
+			imagb.onload = function() {
+				ctx.beginPath();
+				ctx.drawImage(imagb, dx + 5, dy + 100);
+				ctx.closePath();
+			}
+			imagb.src = "img/grayhline.png";
+
 			this.get("bottomLine").set({
 				xPos : dx + 5,
 				yPos : dy + 100,
-				state : "DRAWN"
+				state : "DRAWN",
+				image : imagb
 			});
 		}
 		if(this.get("leftLine").get("state") != "DRAWN") {
-			ctx.beginPath();
-			ctx.drawImage(this.get("leftLine").get("image"), dx, dy);
-			ctx.closePath();
+			var imagl = new Image();
+			imagl.onload = function() {
+				ctx.beginPath();
+				ctx.drawImage(imagl, dx, dy);
+				ctx.closePath();
+			}
+			imagl.src = "img/grayvline.png";
+
 			this.get("leftLine").set({
 				xPos : dx,
 				yPos : dy,
-				state : "DRAWN"
+				state : "DRAWN",
+				image : imagl
 			});
 
 		}
 		if(this.get("rightLine").get("state") != "DRAWN") {
-			ctx.beginPath();
-			ctx.drawImage(this.get("rightLine").get("image"), dx + 100, dy);
-			ctx.closePath();
+			var imagr = new Image();
+			imagr.onload = function() {
+				ctx.beginPath();
+				ctx.drawImage(imagr, dx + 100, dy);
+				ctx.closePath();
+			}
+			imagr.src = "img/grayvline.png";
 			this.get("rightLine").set({
 				xPos : dx + 100,
 				yPos : dy,
-				state : "DRAWN"
+				state : "DRAWN",
+				image : imagr
 			});
 		}
 	}
