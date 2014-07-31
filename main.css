@@ -1,0 +1,86 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+#top_header {
+	font: bold 20px Tahoma;
+	background: #009ACD;
+	border: 1px solid blue;
+	padding:20px;
+	color:#FFFFFF;
+	text-align: center;
+}
+header, section, footer, aside {
+	display: block;
+}
+body {
+	text-align: center;
+}
+
+#mainContent{
+	border: 1px solid #CCC;
+	width: 1000px;
+	margin: 20px auto;
+	text-align: left;
+}
+#main_stage{
+	display: inline;
+}
+
+#side_bar {
+	text-align: left;
+	width: 400px;
+	float: right;
+	margin: 20px 20px auto;
+}
+
+.label-class{
+	font-weight: bold;
+	color: #AA0910;
+}
+ #turn {
+	font-weight: bold;
+	color: #AA0910;
+	margin-top: 
+}
+.rules {
+	margin-bottom: 30px;
+}
+
+.registerBoard, .infoBoard, #result {
+	border-top: #CCC solid 1px;
+	padding: 10px 15px;
+}
+
+ol lh {
+	font-weight: bold;
+	color: #AA0910;
+}
+
+.user-list {
+	padding-bottom: 10px;
+}
+#turn_label{
+	text-align: center;
+}
+#result {
+	border: #FF0000 solid 1px;
+}
+
+input {
+	margin: 5px 0px;
+}
+#main_footer{
+	clear: both;
+	font: 12px Tahoma;
+	text-align: center;
+	padding:10px 0px;
+	border-top: #CCC solid 1px;
+	color: #CCC000;
+}
+
+
+
+#pos {
+	color: #00FF00;
+}

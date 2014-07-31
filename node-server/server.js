@@ -13,6 +13,7 @@ var color = ["#FF0000", "#0000FF", "#00FF00", "#000000", "#880015", "##ff7f27"];
 /**
  * HTTP server
  */
+
 var http = require('http');
 var server = http.createServer(function(request, response) {
 	// Not important for us. We're writing WebSocket server, not HTTP server
